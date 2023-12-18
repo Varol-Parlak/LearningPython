@@ -48,7 +48,9 @@ while True:
     frame_bw = cv.GaussianBlur(frame_bw, (5, 5), 0)
 
     diff = cv.absdiff(frame_bw, first_frame)
+
     _, threshold = cv.threshold(diff, 25, 255, cv.THRESH_BINARY)
+
     first_frame = frame_bw
 
     if threshold.sum() > 600:
@@ -63,8 +65,7 @@ while True:
             send_email(to_email,from_email,frame)
             sent = True
             break
-        
-    
+
     if cv.waitKey(1) == ord("q"):
         break
 
