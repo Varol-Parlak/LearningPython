@@ -76,7 +76,7 @@ while True:
                 print("gönder 1")
                 
             elif total_count == 2:
-                serialInst.write(2w)  
+                serialInst.write(w)  
                 
                 print("gönder 2")
             last_count = total_count
@@ -87,5 +87,6 @@ while True:
 
     if cv2.waitKey(1) == ord("q"):
         break
+
 
 serialInst.close()
